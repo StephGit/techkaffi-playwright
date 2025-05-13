@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5e13d0b1-0f1b-4a4e-8502-b80bebb0f5f4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/demoproject/cypress/cypress/e2e/mytests/1-simple.cy.js" beforeDir="false" afterPath="$PROJECT_DIR$/demoproject/cypress/cypress/e2e/mytests/1-simple.cy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoproject/playwright/tests/1-simple.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/demoproject/playwright/tests/1-simple.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/slides.md" beforeDir="false" afterPath="$PROJECT_DIR$/slides.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="true" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$USER_HOME$/projects/springboot-workshop-2018/spring-demo-app" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../acrevis/clients-coordinator" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../acrevis/clients-dwh-adapter" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../acrevis/clients-facade" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../acrevis/clients-facade-integration-tests" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../acrevis/clients-fil-adapter" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../acrevis/health-facade-integration-tests" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../acrevis/integration-spring-poc" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../acrevis/poc-spring-docker-compose" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../acrevis/poc-spring-docker-compose/poc-spring-story-microservice" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../acrevis/poc-spring-kof-rest-facade" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../acrevis/rest-facade-template" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../acrevis/watchdog" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../acrevis/watchdog-coordinator" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../kafka-weeks/rocket.chat-connector" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../ndbjs-testwtf" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../ndbjs-webapp" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2x2DOltlbYHAgZOwQ4mUw9POvD3" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "git-widget-placeholder": "main",
+    "go.import.settings.migrated": "true",
+    "last_opened_file_path": "/home/sgirod/repos/techkaffi-playwright",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "pnpm"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-IU-251.23774.435" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5e13d0b1-0f1b-4a4e-8502-b80bebb0f5f4" name="Changes" comment="" />
+      <created>1747127244808</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1747127244808</updated>
+      <workItem from="1747127246675" duration="1501000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="executable:docker" />
+    <option featureType="dependencySupport" implementationName="executable:kubectl" />
+    <option featureType="dependencySupport" implementationName="javascript:npm:@angular/core" />
+    <option featureType="dependencySupport" implementationName="javascript:npm:vue" />
+    <option featureType="dependencySupport" implementationName="javascript:npm:cypress" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>false</integration-enabled>
+    <settings-migrated>true</settings-migrated>
+  </component>
+</project>
