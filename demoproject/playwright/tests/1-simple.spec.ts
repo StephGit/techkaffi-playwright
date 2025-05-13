@@ -1,49 +1,23 @@
+
 import { test, expect } from '@playwright/test';
 
-test('has list with two items by default', async ({ page }) => {
-  await page.goto('https://example.cypress.io/todo');
-  expect(page.locator('.todo-list li')).toHaveCount(2);
-  expect(page.locator('.todo-list li')).toHaveText(['Pay electric bill', 'Walk the dog']);
+test('test', async ({ page }) => {
+  await page.goto('https://demo.playwright.dev/todomvc/#/');
+  await page.getByRole('textbox', { name: 'What needs to be done?' }).click();
+  await page.getByRole('textbox', { name: 'What needs to be done?' }).fill('do stuff');
+  await page.getByRole('textbox', { name: 'What needs to be done?' }).press('Enter');
+  await page.getByRole('textbox', { name: 'What needs to be done?' }).fill('whatever');
+  await page.getByRole('textbox', { name: 'What needs to be done?' }).press('Enter');
+  await expect(page.getByText('2 items left')).toBeVisible();
+  expect(await page.getByTestId('todo-item').count()).toBe(2);
 });
 
 
-test('checkbox interaction', async ({ page }) => {
-  await page.goto('https://example.cypress.io/todo');
-  await page.locator('.todo-list li:first input[type="checkbox"]').check();
-  await expect(page.locator('.todo-list li:first input[type="checkbox"]')).toBeChecked();
-});
+test('impressum', async ({ page }) => {
+  await page.goto('https:/booking-a.baspo.admin.ch');
+  await page.getByRole('button', { name: 'Impressum' }).click();
+  await expect(page.locator('[id="__next"]')).toContainText('Bundesamt für Sport BASPO Hauptstrasse 247 CH-2532 Magglingen');
+  await page.getByRole('button', { name: 'FR' }).click();
 
-
-test('navigation', async ({ page }) => {
-  await page.goto('https://example.cypress.io/todo');
-  await page.locator('.todo-list li:first a').click();
-  await expect(page.url()).toContain('/todo/#/');
-});
-
-test('handling alerts', async ({ page }) => {
-  await page.goto('https://example.cypress.io/todo');
-  await page.on('dialog', (dialog) => {
-    expect(dialog.message()).toBe('Deleted!');
-    dialog.dismiss();
-  });
-  await page.locator('.todo-list li:first button').click();
-});
-
-test('iframe support', async ({ page }) => {
-  await page.goto('https://example.cypress.io/todo');
-  const iframe = page.frame('iframe');
-  await expect(iframe.locator('h1')).toContainText('TodoMVC');
-});
-
-test('requests async with assert', async ({ page }) => {
-  await page.goto('https://example.cypress.io/todo');
-  await page.route('GET', '/api/todos', (route) => {
-    return route.fulfill({
-      status: 200,
-      body: JSON.stringify([{ id: 1 }, { id: 2 }, { id: 3 }]),
-    });
-  });
-  const response = await page.request.get('/api/todos');
-  const body = await response.json();
-  expect(body).toHaveLength(3);
+  await expect(page.locator('[id="__next"]')).toContainText('Office fédéral du sport OFSPO Route principale 247 CH-2532 Macolin');
 });

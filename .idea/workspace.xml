@@ -5,7 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e13d0b1-0f1b-4a4e-8502-b80bebb0f5f4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/demoproject/cypress/cypress/e2e/mytests/1-simple.cy.js" beforeDir="false" afterPath="$PROJECT_DIR$/demoproject/cypress/cypress/e2e/mytests/1-simple.cy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/cover.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/.angular/cache/19.2.11/first-app/.tsbuildinfo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/.angular/cache/19.2.11/first-app/vite/deps/@angular_core.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/.angular/cache/19.2.11/first-app/vite/deps/@angular_core.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/.angular/cache/19.2.11/first-app/vite/deps/@angular_platform-browser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/.angular/cache/19.2.11/first-app/vite/deps/@angular_platform-browser.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/.angular/cache/19.2.11/first-app/vite/deps/_metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/.angular/cache/19.2.11/first-app/vite/deps/chunk-7RU5WRPA.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/.angular/cache/19.2.11/first-app/vite/deps/chunk-7RU5WRPA.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/.angular/cache/19.2.11/first-app/vite/deps/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/.angular/cache/19.2.11/first-app/vite/deps_ssr/_metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/.angular/cache/19.2.11/first-app/vite/deps_ssr/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/angular.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/pnpm-lock.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/src/app/app.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/src/assets/angular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/src/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/src/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/tsconfig.app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/tsconfig.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/demoproject/playwright/tests/1-simple.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/demoproject/playwright/tests/1-simple.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/slides.md" beforeDir="false" afterPath="$PROJECT_DIR$/slides.md" afterDir="false" />
     </list>
@@ -56,21 +79,29 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Playwright.impressum.executor": "Run",
+    "Playwright.test.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
-    "last_opened_file_path": "/home/sgirod/repos/techkaffi-playwright",
+    "last_opened_file_path": "/home/sgirod/repos/techkaffi-playwright/img",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "pnpm"
+    "nodejs_package_manager_path": "pnpm",
+    "ts.external.directory.path": "/opt/apps/idea-IU-latest/plugins/javascript-plugin/jsLanguageServicesImpl/external"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/img" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Playwright.impressum">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -99,6 +130,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="impressum" type="JavaScriptTestRunnerPlaywright" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <playwright-package value="$PROJECT_DIR$/demoproject/playwright/node_modules/@playwright/test" />
+      <working-dir value="$PROJECT_DIR$/demoproject/playwright" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/demoproject/playwright/tests/1-simple.spec.ts" />
+      <test-names>
+        <test-name value="impressum" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="JavaScriptTestRunnerPlaywright" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <playwright-package value="$PROJECT_DIR$/demoproject/playwright/node_modules/@playwright/test" />
+      <working-dir value="$PROJECT_DIR$/demoproject/playwright" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/demoproject/playwright/tests/1-simple.spec.ts" />
+      <test-names>
+        <test-name value="test" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="TestNG">
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -108,6 +163,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Playwright.impressum" />
+        <item itemvalue="Playwright.test" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -123,7 +184,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1747127244808</updated>
-      <workItem from="1747127246675" duration="1501000" />
+      <workItem from="1747127246675" duration="15365000" />
     </task>
     <servers />
   </component>

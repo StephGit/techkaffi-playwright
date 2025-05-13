@@ -1,16 +1,11 @@
 ---
 # You can also start simply with 'default'
 theme: default
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
-background: https://cover.sli.dev
+
+
 # some information about your slides (markdown enabled)
 title: Playwright Techkaffi
-info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
 
-  Learn more at [Sli.dev](https://sli.dev)
 # apply unocss classes to the current slide
 class: text-center
 # https://sli.dev/features/drawing
@@ -23,16 +18,15 @@ mdc: true
 # open graph
 # seoMeta:
 #  ogImage: https://cover.sli.dev
+layout: image
+image: /img/cover.webp
 ---
 
-# Playwright
 
-
-Techkaffi, 21.05.2025<br>
-Stephan Girod, Puzzle ITC
 
 <!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
+Techkaffi, 21.05.2025<br>
+Stephan Girod, Puzzle ITC
 -->
 
 ---
@@ -54,12 +48,12 @@ top frameworks vergleich -> cypress vs. playwright
 ---
 transition: fade-out
 level: 1
-layout: image
+layout: image-right
 image: /img/character.png
-backgroundSize: 100%
+backgroundSize: 100% 100%
 ---
 
-# Choose your character
+## Choose your character
 
 What is your preference for FE testing?
 
@@ -87,26 +81,16 @@ transition: fade-out
 level: 2
 ---
 
-# Key Differences
+## Key Differences
 
 | **Feature** | **Playwright** | **Cypress** |
 |-------------|----------------|-------------|
 | 📝 **Language** | JavaScript, TypeScript, Python, Java, C# | JavaScript, TypeScript |
-| 🏃🏽 **Test Runner** | Works with Jest, Mocha, and others | Built-in test runner with time-travel debugging |
-| ⛓️ **Parallel Testing** | Full parallelism, even within specs | Parallel at spec level only (paid plans for optimal performance) |
-| ⛩️ **Architecture** | Node.js context separate from browser | Runs within the browser itself |
+| ⛓️ **Parallel Testing** | Full parallelism | Parallel at spec level only |
+| ⛩️ **Architecture** | Node.js context  | Runs within the browser itself |
 | 🕸️ **Browsers Supported** | Chromium, Firefox, WebKit (Safari), Edge | Chrome, Firefox, Edge (Chromium-based), Electron (Safari experimental) |
-| 📱 **Mobile Testing** | Emulation + limited real device support | Emulation only with limited options |
-| 📄 **Test Syntax** | `async/await` with explicit promises | Chainable commands with implicit waiting |
-| 🖼️ **iframes** | Native support | Requires plugins or custom commands |
-| 🪟 **Multiple tabs/windows** | Supported | Limited support |
-| 🌐 **Network Interception** | Route-based with flexible handlers | Powerful `cy.intercept()` API |
-| 🔄 **Auto-waiting** | Intelligent waiting for actionable elements | Built-in retry-ability and automatic waiting |
 | 🧩 **Component Testing** | Framework-agnostic | Supports React, Vue, Angular, Svelte |
 | 🔍 **Debugging** | Inspector, tracing, screenshots, videos | Time-travel debugging with DOM snapshots |
-| 📊 **Reporting** | Built-in HTML reporter | Dashboard service (paid feature) |
-| 🔌 **Plugin Ecosystem** | Growing ecosystem | Mature, extensive ecosystem |
-| 🎬 **Record & Playback** | Mature codegen tool with multi-language support | Experimental Cypress Studio feature |
 
 <!--
 Both are opensource and support all Operation Systems
@@ -117,6 +101,7 @@ Both are opensource and support all Operation Systems
 - **Decision Factors**: Safari testing needs, language requirements, debugging preferences
 -->
 
+
 ---
 transition: fade-out
 level: 3
@@ -125,12 +110,12 @@ image: /img/stats.png
 backgroundSize: 78% 72%
 ---
 <style>
-h1, span {
+h2, span {
   color: black;
 }
 </style>
 
-# Stats
+## Stats
 
 <div class="absolute bottom-10">
   <span class="font-size-3">
@@ -147,231 +132,237 @@ More focus on enterprise features
 ---
 transition: fade-out
 level: 4
-layout: two-cols
+layout: two-cols-header
 ---
+## Syntax Comparison
 
-## Cypress
+::left::
 
-```js
-describe('example to-do app', () => {
-  beforeEach(() => {
-    cy.visit('https://example.cypress.io/todo')
-  })
+### Playwright
 
-  it('displays two todo items by default', () => {
-    cy.get('.todo-list li').should('have.length', 2)
-    cy.get('.todo-list li').first().should('have.text', 'Pay electric bill')
-    cy.get('.todo-list li').last().should('have.text', 'Walk the dog')
-  })
-```
-
-::right::
-
-## Playwright
-
-```ts
-import { test, expect } from '@playwright/test';
-
-test('has list with two items by default', async ({ page }) => {
-  await page.goto('https://example.cypress.io/todo');
-  expect(page.locator('.todo-list li')).toHaveCount(2);
-  expect(page.locator('.todo-list li')).toHaveText(['Pay electric bill', 'Walk the dog']);
+```javascript
+test('add and complete todo items', async ({ page }) => {
+  await page.goto('https://example.com/todo');
+  
+  // Add a new todo
+  await page.fill('.new-todo', 'Buy groceries');
+  await page.press('.new-todo', 'Enter');
+  
+  // Verify it was added
+  await expect(page.locator('.todo-list li'))
+      .toHaveCount(1);
+  await expect(page.locator('.todo-list li'))
+      .toHaveText('Buy groceries');
+  
+  // Complete the todo
+  await page.click('.todo-list li .toggle');
+  
+  // Verify it's completed
+  await expect(page.locator('.todo-list li'))
+      .toHaveClass(/completed/);
 });
 ```
 
 
-<!-- More examples:
-  interaction checkboxes
-  navigation
-  handling alerts
-  iframe support
-  requests async with assert
- -->
+::right::
+
+### Cypress:
+
+```javascript
+it('add and complete todo items', () => {
+    cy.visit('https://example.com/todo');
+
+    // Add a new todo
+    cy.get('.new-todo').type('Buy groceries{enter}');
+
+    
+    // Verify it was added
+    cy.get('.todo-list li')
+        .should('have.length', 1);
+    cy.get('.todo-list li')
+        .should('contain.text', 'Buy groceries');
+
+    // Complete the todo
+    cy.get('.todo-list li .toggle').click();
+
+    // Verify it's completed
+    cy.get('.todo-list li')
+        .should('have.class', 'completed');
+});
+```
+
+<!-- 
+Syntax more readable with Cypress, as long your are not familiar to async/await patterns
+Test flow feels more natural with Playwright
+Cypress uses a unique command chaining API with implicit waiting
+- Automatic retry-ability built into commands and hides complexity of async operations from the test writer
+-->
+
+---
+transition: fade-out
+level: 4
+---
+
+## Selector Approach
+<br/>
+
+### Playwright 
+```javascript
+// Multiple selector strategies
+await page.click('text=Click me');  // Text content
+await page.click('.class >> nth=2'); // CSS with filtering
+await page.click('role=button[name="Submit"]'); // Accessibility 
+await page.getByTestId('submit-button').click();// selectors
+
+```
+<br/>
+
+### Cypress
+```javascript
+// Primarily CSS selectors with some extensions
+cy.contains('Click me').click();
+cy.get('.class').eq(2).click();
+cy.get('[aria-label="Submit"]').click();
+cy.get('[data-cy="submit-button"]').click();
+```
+<!--
+Playwright has build-in method with configurable attibute
+Cypress requires custom commands or plugins for specialized data-attribute selection
+data-cy recommended by Cypress
+Attribute is customizable with both -> cypress/playwright.config.js
+-->
 
 
 ---
 transition: fade-out
 level: 4
-layout: two-cols
 ---
+## Handling Asynchronous Operations
+<br/>
 
-## Cypress
-
-```js
-cy.visit('https://example.cypress.io/todo')
-cy.get('.todo-list li:first').find('input[type="checkbox"]').check()
-cy.get('.todo-list li:first').find('input[type="checkbox"]').should('be.checked')
+### Playwright
+```javascript
+// Explicit waiting with async/await
+await page.waitForSelector('.element');
+await page.waitForResponse('**/api/data');
+const response = await page.waitForResponse(
+    res => res.url().includes('/api'));
 ```
+<br/>
 
-::right::
-
-## Playwright
-
-```ts
-const { test, expect } = require('@playwright/test');
-
-test('checkbox interaction', async ({ page }) => {
-  await page.goto('https://example.cypress.io/todo');
-  await page.locator('.todo-list li:first input[type="checkbox"]').check();
-  await expect(page.locator('.todo-list li:first input[type="checkbox"]')).toBeChecked();
-});
+### Cypress
+```javascript
+// Implicit waiting built into commands
+cy.get('.element'); // Automatically waits
+cy.wait('@apiRequest'); // Wait for aliased route
+cy.intercept('**/api/data').as('apiRequest');
 ```
-
-
 ---
 transition: fade-out
 level: 4
-layout: two-cols
 ---
-
-## Cypress
-
-```js
-cy.visit('https://example.cypress.io/todo')
-cy.get('.todo-list li:first a').click()
-cy.url().should('contain', '/todo/#/')
-```
-
-::right::
+## Assertions
+<br/>
 
 ## Playwright
-
-```ts
-const { test, expect } = require('@playwright/test');
-
-test('navigation', async ({ page }) => {
-  await page.goto('https://example.cypress.io/todo');
-  await page.locator('.todo-list li:first a').click();
-  await expect(page.url()).toContain('/todo/#/');
-});
+```javascript
+// Jest-like assertions
+await expect(page).toHaveTitle('Page Title');
+await expect(page.locator('.element')).toBeVisible();
+await expect(page.locator('.count')).toHaveText('5');
 ```
+<br/>
 
-
+## Cypress
+```javascript
+// Chainable assertions
+cy.title().should('eq', 'Page Title');
+cy.get('.element').should('be.visible');
+cy.get('.count').should('have.text', '5');
+```
 ---
 transition: fade-out
 level: 4
-layout: two-cols
+
 ---
+## Handling Multiple Elements
+<br/>
 
-## Cypress
+### Playwright
+```javascript
+// Working with multiple elements
+const items = await page.locator('.item').all();
+for (const item of items) {
+  await item.click();
+}
 
-```js
-cy.visit('https://example.cypress.io/todo')
-cy.window().its('alert').should('be.undefined')
-cy.get('.todo-list li:first button').click()
-cy.on('window:alert', (text) => {
-  expect(text).to.equal('Deleted!')
-})
+// Or using forEach with a locator
+await page.locator('.item').locator('button').click();
 ```
+<br/>
 
-::right::
-
-## Playwright
-
-```ts
-const { test, expect } = require('@playwright/test');
-
-test('handling alerts', async ({ page }) => {
-  await page.goto('https://example.cypress.io/todo');
-  await page.on('dialog', (dialog) => {
-    expect(dialog.message()).toBe('Deleted!');
-    dialog.dismiss();
-  });
-  await page.locator('.todo-list li:first button').click();
+### Cypress
+```javascript
+// Working with multiple elements
+cy.get('.item').each(($item) => {
+  cy.wrap($item).click();
 });
-```
 
+// Or using direct jQuery-like operations
+cy.get('.item').find('button').click();
+```
 
 ---
 transition: fade-out
-level: 4
-layout: two-cols
+level: 1
+
 ---
 
-## Cypress
+## Tooling
 
-```js
-cy.visit('https://example.cypress.io/todo')
-cy.frame('iframe').find('h1').should('contain', 'TodoMVC')
-```
-
-::right::
-
-## Playwright
-
-```ts
-const { test, expect } = require('@playwright/test');
-
-test('iframe support', async ({ page }) => {
-  await page.goto('https://example.cypress.io/todo');
-  const iframe = page.frame('iframe');
-  await expect(iframe.locator('h1')).toContainText('TodoMVC');
-});
-```
-
-
+`
+npx playwright test --headed 
+`
 
 ---
 transition: fade-out
-level: 4
-layout: two-cols
+level: 1
+
 ---
 
-## Cypress
+## Special Attacks
 
-```js
-cy.visit('https://example.cypress.io/todo')
-cy.intercept('GET', '/api/todos').as('getTodos')
-cy.wait('@getTodos').then((xhr) => {
-  expect(xhr.response.body).to.have.length(3)
-})
-```
+`npx playwright codegen`
+`npx playwright codegen --viewport-size="800,600" playwright.dev`
+`npx playwright codegen --timezone="Europe/Rome" --geolocation="41.890221,12.492348" --lang="it-IT" bing.com/maps`
 
-::right::
-
-## Playwright
-
-```ts
-const { test, expect } = require('@playwright/test');
-
-test('requests async with assert', async ({ page }) => {
-  await page.goto('https://example.cypress.io/todo');
-  await page.route('GET', '/api/todos', (route) => {
-    return route.fulfill({
-      status: 200,
-      body: JSON.stringify([{ id: 1 }, { id: 2 }, { id: 3 }]),
-    });
-  });
-  const response = await page.request.get('/api/todos');
-  const body = await response.json();
-  expect(body).toHaveLength(3);
-});
-```
-
-
+https://playwright.dev/docs/codegen#preserve-authenticated-state
+<!--
+record test and add expects
+show locator selector
+record cursor
+assert visibilty / text /value
 
 
 ---
 transition: fade-out
 level: 1
-layout: two-cols
 ---
 
-# Special Attacks
+## Winner is
 
-Async
-Testrecording
 
-```js
-import { test, expect } from '@playwright/test'
 
-test('Multiple API Requests Test', async ({ request }) => {
-  // First request and assertion
-  const todoResponse = await request.get('https://jsonplaceholder.typicode.com/todos/1')
-  expect(todoResponse.status()).toBe(200)
+## Conclusion
 
-  // Second request and assertion
-  const userResponse = await request.get('https://jsonplaceholder.typicode.com/users/1')
-  expect(userResponse.status()).toBe(200)
-})
-```
+**Cypress** offers a more accessible entry point for beginners and non-developers with its readable syntax and automatic handling of asynchronous operations. The chainable API and built-in waiting mechanisms make it easier to write stable tests without deep JavaScript knowledge.
+
+**Playwright** follows standard JavaScript patterns that may be more familiar to experienced developers. While it requires understanding of async/await, it offers more flexibility and control for complex scenarios, and its multi-language support makes it more versatile for diverse teams.
+
+The choice between the two often comes down to:
+1. The team's existing JavaScript experience
+2. The complexity of the testing scenarios
+3. The need for cross-browser testing (especially Safari)
+4. Preference for either automatic or explicit control over test flow
+
+
