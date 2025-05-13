@@ -337,12 +337,13 @@ level: 1
 `npx playwright codegen --timezone="Europe/Rome" --geolocation="41.890221,12.492348" --lang="it-IT" bing.com/maps`
 
 https://playwright.dev/docs/codegen#preserve-authenticated-state
+
 <!--
 record test and add expects
 show locator selector
 record cursor
 assert visibilty / text /value
-
+-->
 
 ---
 transition: fade-out
