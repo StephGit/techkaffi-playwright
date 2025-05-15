@@ -27,6 +27,9 @@ image: /img/cover.webp
 <!--
 Techkaffi, 21.05.2025<br>
 Stephan Girod, Puzzle ITC
+
+Willkommen zum Techkaffi oder how to not use Dall-e to generate your slides
+Idee Arcade Game
 -->
 
 
@@ -40,7 +43,7 @@ backgroundSize: 100% 100%
 
 ## Choose your character
 
-What is your preference for FE testing?
+What is your preference for End-to-End testing?
 
 
 <!--
@@ -59,7 +62,7 @@ backgroundSize: 100%
 
 
 <!--
-While Cypress is a testing tool, Playwright is an automation solution.
+
 -->
 ---
 transition: fade-out
@@ -71,21 +74,46 @@ level: 2
 | **Feature** | **Playwright** | **Cypress** |
 |-------------|----------------|-------------|
 | 📝 **Language** | JavaScript, TypeScript, Python, Java, C# | JavaScript, TypeScript |
-| ⛓️ **Parallel Testing** | Full parallelism | Parallel at spec level only |
 | ⛩️ **Architecture** | Node.js context  | Runs within the browser itself |
+| 🏃🏽 **Test Runner** | Works with Jest, Mocha, and others | Built-in test runner |
+| ⛓️ **Parallel Testing** | Full parallelism | Parallel at spec level only |
 | 🕸️ **Browsers Supported** | Chromium, Firefox, WebKit (Safari), Edge | Chrome, Firefox, Edge (Chromium-based), Electron (Safari experimental) |
-| 🧩 **Component Testing** | Framework-agnostic | Supports React, Vue, Angular, Svelte |
-| 🔍 **Debugging** | Inspector, tracing, screenshots, videos | Time-travel debugging with DOM snapshots |
 
 <!--
 Both are opensource and support all Operation Systems
 
-- **Playwright Strengths**: Cross-browser support (including Safari), multiple language bindings, flexible architecture
-- **Cypress Strengths**: Developer experience, built-in test runner, mature ecosystem
-- **Major Differences**: Browser support, execution model, iframe handling
-- **Decision Factors**: Safari testing needs, language requirements, debugging preferences
+Sprachunterstützung bei Playwright besser
+
+TestRunner: Playwright mehrere Optionen, Cypress nur Built-in -> Speed Vorteil
+https://www.cuketest.com/playwright/docs/test-runners/
+-> Cypress unterstützt für Component Testing nur React, Vue, Angular, Svelte
+
+Paralleles Testen bei Cypress nur bedingt, sonst paid plans für optimale Performance
 -->
 
+---
+transition: fade-out
+level: 2
+---
+
+## Key Differences
+
+| **Feature** | **Playwright** | **Cypress** |
+|-------------|----------------|-------------|
+| 📱 **Mobile Testing** | Emulation + limited real device support | Emulation only limited |
+| 🖼️ **iframes** | Native support | Requires plugins or custom commands |
+| 🪟 **Multiple tabs/windows** | Supported | Limited support |
+| 🔍 **Debugging** | Inspector, tracing, screenshots, videos | Time-travel debugging with DOM snapshots |
+| 🔌 **Plugin Ecosystem** | Growing ecosystem | Mature, extensive ecosystem |
+
+
+<!--
+Both are opensource and support all Operation Systems
+
+Sprachunterstützung bei Playwright besser
+Paralleles Testen bei Cypress nur bedingt, sonst paid plans für optimale Performance
+
+-->
 
 ---
 transition: fade-out
@@ -320,6 +348,7 @@ npx cypress run # run cypress tests
 
 <!--
 Both are capable to record video / screenshots / trace
+expect(...).toMatchSnapshot(...) compare screenshots or textual or binary data
 -->
 
 
