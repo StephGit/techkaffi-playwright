@@ -29,21 +29,6 @@ Techkaffi, 21.05.2025<br>
 Stephan Girod, Puzzle ITC
 -->
 
----
-transition: fade-out
-level: 1
----
-
-# Agenda
-
-- Choose your character
-- Cypress vs. Playwright
-- Special Attacks
-- Finish move
-
-<!--
-top frameworks vergleich -> cypress vs. playwright
--->
 
 ---
 transition: fade-out
@@ -320,50 +305,71 @@ level: 1
 
 ## Tooling
 
-`
-npx playwright test --headed 
-`
+
+**Playwright**
+```shell
+npx playwright test --ui # ui mode
+npx playwright test --headed  #headless mode
+```
+
+**Cypress**
+```shell
+npx cypress open # open cypress ui
+npx cypress run # run cypress tests
+```
+
+<!--
+Both are capable to record video / screenshots / trace
+-->
+
 
 ---
 transition: fade-out
 level: 1
-
+layout: image-right
+image: /img/special_attacks.webp
+backgroundSize: 100% 100%
 ---
 
-## Special Attacks
+# Special Attacks
 
-`npx playwright codegen`
-`npx playwright codegen --viewport-size="800,600" playwright.dev`
-`npx playwright codegen --timezone="Europe/Rome" --geolocation="41.890221,12.492348" --lang="it-IT" bing.com/maps`
+---
+transition: fade-out
+level: 1
+---
 
-https://playwright.dev/docs/codegen#preserve-authenticated-state
+## Codegen Support
+
+<br/>
+
+
+```shell
+npx playwright codegen
+
+# emulate viewport size
+npx playwright codegen --viewport-size="800,600" puzzle.ch
+
+# emulate device
+npx playwright codegen --device="Pixel 5" --lang="fr-FR" puzzle.ch
+npx playwright codegen --color-scheme=dark playwright.dev
+```
 
 <!--
 record test and add expects
 show locator selector
 record cursor
 assert visibilty / text /value
+https://playwright.dev/docs/codegen#preserve-authenticated-state
 -->
 
 ---
 transition: fade-out
 level: 1
+layout: center
 ---
 
-## Winner is
+## And the winner is ???
 
 
-
-## Conclusion
-
-**Cypress** offers a more accessible entry point for beginners and non-developers with its readable syntax and automatic handling of asynchronous operations. The chainable API and built-in waiting mechanisms make it easier to write stable tests without deep JavaScript knowledge.
-
-**Playwright** follows standard JavaScript patterns that may be more familiar to experienced developers. While it requires understanding of async/await, it offers more flexibility and control for complex scenarios, and its multi-language support makes it more versatile for diverse teams.
-
-The choice between the two often comes down to:
-1. The team's existing JavaScript experience
-2. The complexity of the testing scenarios
-3. The need for cross-browser testing (especially Safari)
-4. Preference for either automatic or explicit control over test flow
 
 

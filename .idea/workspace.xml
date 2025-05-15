@@ -5,32 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e13d0b1-0f1b-4a4e-8502-b80bebb0f5f4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/img/cover.webp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/.angular/cache/19.2.11/first-app/.tsbuildinfo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/.angular/cache/19.2.11/first-app/vite/deps/@angular_core.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/.angular/cache/19.2.11/first-app/vite/deps/@angular_core.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/.angular/cache/19.2.11/first-app/vite/deps/@angular_platform-browser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/.angular/cache/19.2.11/first-app/vite/deps/@angular_platform-browser.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/.angular/cache/19.2.11/first-app/vite/deps/_metadata.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/.angular/cache/19.2.11/first-app/vite/deps/chunk-7RU5WRPA.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/.angular/cache/19.2.11/first-app/vite/deps/chunk-7RU5WRPA.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/.angular/cache/19.2.11/first-app/vite/deps/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/.angular/cache/19.2.11/first-app/vite/deps_ssr/_metadata.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/.angular/cache/19.2.11/first-app/vite/deps_ssr/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/angular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/pnpm-lock.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/src/app/app.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/src/assets/angular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/src/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/src/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/src/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demoproject/angular playground/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demoproject/playwright/tests/1-simple.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/demoproject/playwright/tests/1-simple.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/slides.md" beforeDir="false" afterPath="$PROJECT_DIR$/slides.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,33 +44,33 @@
       </map>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2x2DOltlbYHAgZOwQ4mUw9POvD3" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Playwright.impressum.executor": "Run",
-    "Playwright.test.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "git-widget-placeholder": "main",
-    "go.import.settings.migrated": "true",
-    "last_opened_file_path": "/home/sgirod/repos/techkaffi-playwright/img",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "pnpm",
-    "ts.external.directory.path": "/opt/apps/idea-IU-latest/plugins/javascript-plugin/jsLanguageServicesImpl/external"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Playwright.impressum.executor&quot;: &quot;Run&quot;,
+    &quot;Playwright.test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/sgirod/repos/techkaffi-playwright/img&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/opt/apps/idea-IU-latest/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/img" />
@@ -185,6 +160,7 @@
       <option name="presentableId" value="Default" />
       <updated>1747127244808</updated>
       <workItem from="1747127246675" duration="15365000" />
+      <workItem from="1747206370228" duration="856000" />
     </task>
     <servers />
   </component>
