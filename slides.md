@@ -28,8 +28,14 @@ image: /img/cover.webp
 Techkaffi, 21.05.2025<br>
 Stephan Girod, Puzzle ITC
 
-Willkommen zum Techkaffi oder how to not use Dall-e to generate your slides
+Willkommen zum Techkaffi 
+
+Damit das Techkaffi eine gewisse pädagogische Message hat, wurden gewisse Slides mit Dall-e erstellt. Die pädagogische Message ist dabei: do not.
+
+
 Idee Arcade Game
+
+Record!!!!
 -->
 
 
@@ -47,9 +53,49 @@ What is your preference for End-to-End testing?
 
 
 <!--
-Webdriver.io / TestCafe / Nightwatch.js, Puppeteer,...
+cypress - browser emulation testing
+
+playwright - nodejs 
+
+Webdriver.io - nodejs ose
+
+TestCafe - nodejs
+
+Nightwatch.js - to check
+
+Puppeteer 
 
 Playwright Devs -> ex. Puppeteer Team
+-->
+
+---
+transition: fade-out
+level: 2
+layout: image
+image: /img/compare_stats.png
+backgroundSize: 78% 72%
+---
+<style>
+h2, span {
+  color: black;
+}
+</style>
+
+## Stats
+
+<div class="absolute bottom-10">
+  <span class="font-size-3">
+Source: https://npmtrends.com/cypress-vs-nightwatch-vs-playwright-vs-puppeteer-vs-testcafe-vs-webdriverio
+  </span>
+</div>
+
+<!--
+playwright jüngstes framework
+Mai 2024 turning point? Why?
+Paywalling Features in Cypress
+More focus on enterprise features
+
+Puppeteer - 90.7k stars 
 -->
 
 ---
@@ -78,6 +124,7 @@ level: 2
 | 🏃🏽 **Test Runner** | Works with Jest, Mocha, and others | Built-in test runner |
 | ⛓️ **Parallel Testing** | Full parallelism | Parallel at spec level only |
 | 🕸️ **Browsers Supported** | Chromium, Firefox, WebKit (Safari), Edge | Chrome, Firefox, Edge (Chromium-based), Electron (Safari experimental) |
+| 🔄 **Auto-waiting** | Intelligent waiting for actionable elements | Built-in retry-ability and automatic waiting |
 
 <!--
 Both are opensource and support all Operation Systems
@@ -115,36 +162,10 @@ Paralleles Testen bei Cypress nur bedingt, sonst paid plans für optimale Perfor
 
 -->
 
+
 ---
 transition: fade-out
 level: 3
-layout: image
-image: /img/stats.png
-backgroundSize: 78% 72%
----
-<style>
-h2, span {
-  color: black;
-}
-</style>
-
-## Stats
-
-<div class="absolute bottom-10">
-  <span class="font-size-3">
-Source: https://npmtrends.com/cypress-vs-playwright
-  </span>
-</div>
-
-<!--
-Mai 2024 turning point?
-Paywalling Features in Cypress
-More focus on enterprise features
--->
-
----
-transition: fade-out
-level: 4
 layout: two-cols-header
 ---
 ## Syntax Comparison
@@ -158,8 +179,8 @@ test('add and complete todo items', async ({ page }) => {
   await page.goto('https://example.com/todo');
   
   // Add a new todo
-  await page.fill('.new-todo', 'Buy groceries');
-  await page.press('.new-todo', 'Enter');
+  await page.locator('.new-todo').fill('Buy groceries');
+  await page.locator('.new-todo').press('Enter');
   
   // Verify it was added
   await expect(page.locator('.todo-list li'))
@@ -168,7 +189,7 @@ test('add and complete todo items', async ({ page }) => {
       .toHaveText('Buy groceries');
   
   // Complete the todo
-  await page.click('.todo-list li .toggle');
+  await page.locator('.todo-list li .toggle').click();
   
   // Verify it's completed
   await expect(page.locator('.todo-list li'))
@@ -204,11 +225,17 @@ it('add and complete todo items', () => {
 });
 ```
 
+
+
 <!-- 
 Syntax more readable with Cypress, as long your are not familiar to async/await patterns
+
 Test flow feels more natural with Playwright
+
 Cypress uses a unique command chaining API with implicit waiting
 - Automatic retry-ability built into commands and hides complexity of async operations from the test writer
+
+Playwright uses Locators to find elements and commands to perform actions 
 -->
 
 ---
@@ -222,12 +249,21 @@ level: 4
 ### Playwright 
 ```javascript
 // Multiple selector strategies
-await page.click('text=Click me');  // Text content
-await page.click('.class >> nth=2'); // CSS with filtering
-await page.click('role=button[name="Submit"]'); // Accessibility 
-await page.getByTestId('submit-button').click();// selectors
+await page.getByRole('button', { name: 'Submit' }).click(); // built-in 
+await page.getByTestId('submit-button').click(); // built-in 
+await page.getByLabel('Password').fill('secret-password'); // built-in 
+await page.locator('css=button').click();  // CSS locator
+await page.locator('.class >> nth=2').click(); // CSS with filtering
+await page.locator('role=button[name="Submit"]').click(); // Accessibility 
+
 
 ```
+<div class="absolute bottom-5">
+  <a href="https://playwright.dev/docs/locators" class="font-size-3">
+https://playwright.dev/docs/locators
+  </a>
+</div>
+
 <br/>
 
 ### Cypress
@@ -239,10 +275,16 @@ cy.get('[aria-label="Submit"]').click();
 cy.get('[data-cy="submit-button"]').click();
 ```
 <!--
-Playwright has build-in method with configurable attibute
+Playwright bietet diverse Locator, empfohlen werden die User-facing Attribute um die Tests resilient zu machen.
+
+Cypress nutzt CSS Selectors mit einigen Zusatzfunktionen
+
+ has build-in method with configurable attibute
 Cypress requires custom commands or plugins for specialized data-attribute selection
 data-cy recommended by Cypress
 Attribute is customizable with both -> cypress/playwright.config.js
+
+- Accessiblity tree snapshots - deprecated use Axe
 -->
 
 
@@ -250,26 +292,35 @@ Attribute is customizable with both -> cypress/playwright.config.js
 transition: fade-out
 level: 4
 ---
-## Handling Asynchronous Operations
+## Network Requests
 <br/>
 
 ### Playwright
 ```javascript
 // Explicit waiting with async/await
-await page.waitForSelector('.element');
-await page.waitForResponse('**/api/data');
-const response = await page.waitForResponse(
-    res => res.url().includes('/api'));
+const responsePromise = page.waitForResponse('**/api/data');
+await page.getByText('trigger response').click();
+const response = await responsePromise;
 ```
+
 <br/>
 
 ### Cypress
 ```javascript
 // Implicit waiting built into commands
-cy.get('.element'); // Automatically waits
-cy.wait('@apiRequest'); // Wait for aliased route
+cy.get('trigger response').click();
 cy.intercept('**/api/data').as('apiRequest');
+cy.wait('@apiRequest'); // Wait for aliased route
 ```
+<!--
+Playwright 
+explizite struktur mit async/await
+
+cypress
+implicites warten eingebaut in befehle
+-->
+
+
 ---
 transition: fade-out
 level: 4
@@ -284,6 +335,13 @@ await expect(page).toHaveTitle('Page Title');
 await expect(page.locator('.element')).toBeVisible();
 await expect(page.locator('.count')).toHaveText('5');
 ```
+
+<div class="absolute bottom-5">
+  <a href="https://playwright.dev/docs/api/class-genericassertions" class="font-size-3">
+https://playwright.dev/docs/api/class-genericassertions
+  </a>
+</div>
+
 <br/>
 
 ## Cypress
@@ -293,6 +351,15 @@ cy.title().should('eq', 'Page Title');
 cy.get('.element').should('be.visible');
 cy.get('.count').should('have.text', '5');
 ```
+
+<!--
+Playwright 
+expect mit vielen Optionen Generic/Locator/Page
+
+cypress
+methoden innerhalb should function
+-->
+
 ---
 transition: fade-out
 level: 4
@@ -310,7 +377,7 @@ for (const item of items) {
 }
 
 // Or using forEach with a locator
-await page.locator('.item').locator('button').click();
+await page.locator('.item').forEach(async (item) => await item.locator('button').click();
 ```
 <br/>
 
@@ -337,13 +404,14 @@ level: 1
 **Playwright**
 ```shell
 npx playwright test --ui # ui mode
-npx playwright test --headed  #headless mode
+npx playwright test --headed  # headed mode
+npx playwright test  # headless mode
 ```
 
 **Cypress**
 ```shell
-npx cypress open # open cypress ui
-npx cypress run # run cypress tests
+npx cypress open # ui mode
+npx cypress run # headless mode
 ```
 
 <!--
@@ -397,8 +465,5 @@ level: 1
 layout: center
 ---
 
-## And the winner is ???
-
-
-
+# And the winner is ???
 

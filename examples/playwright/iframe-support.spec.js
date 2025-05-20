@@ -4,7 +4,7 @@ import { test, expect } from '@playwright/test';
 test('iframe support', async ({ page }) => {
   // Navigate to the page with iframes
   await page.goto('https://example.cypress.io/commands/querying');
-  
+  await page.click('.btn.btn-primary');
   // Get the iframe with the example button
   const iframe = page.frameLocator('iframe.demo-frame');
   

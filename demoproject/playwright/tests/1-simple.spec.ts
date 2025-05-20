@@ -26,5 +26,5 @@ test('test-impressum', async ({ page }) => {
   await page.goto('https://booking.baspo.admin.ch/');
   await page.getByText('© 2019 BASPOv1.51.02Terms and').click();
   await page.getByRole('button', { name: 'Impressum' }).click();
-  await expect(page.getByRole('heading', { name: 'Herausgeber und Redaktion:' })
+  await expect(page.getByRole('heading', { name: 'Herausgeber und Redaktion:' })).toBeVisible();
 });
